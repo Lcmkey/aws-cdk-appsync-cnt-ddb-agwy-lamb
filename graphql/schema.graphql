@@ -1,0 +1,46 @@
+# @aws_api_key - To specify the field is API_KEY authorized.
+
+# @aws_iam - To specify that the field is AWS_IAM authorized.
+
+# @aws_oidc - To specify that the field is OPENID_CONNECT authorized.
+
+# @aws_cognito_user_pools - To specify that the field is AMAZON_COGNITO_USER_POOLS authorized.
+
+type Post @aws_api_key @aws_cognito_user_pools {
+  id: String
+  title: String
+  create_time: String
+}
+
+input FindPostInput　{
+  id: ID!
+}
+
+input createPostInput {
+  id: ID!
+  title: String
+  create_time: String
+}
+
+input updatePostInput {
+  id: ID!
+  title: String
+  create_time: String
+}
+
+type Query @aws_api_key @aws_cognito_user_pools {
+  posts: [Post]
+  post(id: ID!): Post
+  query(id: ID!, start: String!, end: String!): [Post]
+}
+
+type Mutation @aws_api_key @aws_cognito_user_pools {
+  createPost(post: createPostInput!): Post
+  updatePost(post: updatePostInput!): Post
+  deletePost(id: ID!): Post
+}
+
+type Schema {
+  query: Query
+  mutation: Mutation
+}
