@@ -1,8 +1,8 @@
 {
-  "name": "aws-cdk-appsync-cognito-dynamodb",
+  "name": "aws-cdk-appsync-cnt-ddb-agwy-lamb",
   "version": "0.1.0",
   "bin": {
-    "aws-cdk-appsync-cognito-dynamodb": "bin/aws-cdk-appsync-cognito-dynamodb.js"
+    "aws-cdk-appsync-cnt-ddb-agwy-lamb": "bin/aws-cdk-appsync-cnt-ddb-agwy-lamb.js"
   },
   "scripts": {
     "build": "tsc",
